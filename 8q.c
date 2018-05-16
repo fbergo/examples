@@ -4,16 +4,14 @@
 
 int solve8q() {
   int qrow[9]  = {0,0,0,0,0,0,0,0,0}; // [0] ignored, using indexes 1..8 and values 1..8 for readability.
-  int qlast[9] = {0,0,0,0,0,0,0,0,0}; // last row attempted for each column
   int col = 1;
   int i,j,k,bad;
 
   while(1) {
 
-    if (qlast[col]==8) {
+    if (qrow[col]==8) {
       if (col>1) { 
         /* tried every position on this column, didn't work. backtrack to previous column */
-        qlast[col]=0;
         qrow[col]=0;
         col--; 
         continue;  
@@ -23,7 +21,7 @@ int solve8q() {
         return -1 /* failed */;
       }
     } else {
-      qrow[col] = ++qlast[col];
+      qrow[col]++;
     }
 
     /* check whether each queen pair attacks one another */
