@@ -10,10 +10,6 @@ int solve8q() {
 
   while(1) {
 
-    printf("col=%d qrow=[%d,%d,%d,%d,%d,%d,%d,%d]\n",col,
-           qrow[1],qrow[2],qrow[3],qrow[4],
-           qrow[5],qrow[6],qrow[7],qrow[8]);
-
     if (qlast[col]==8) {
       if (col>1) { 
         /* tried every position on this column, didn't work. backtrack to previous column */
