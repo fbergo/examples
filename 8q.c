@@ -3,7 +3,7 @@
 #include <string.h>
 
 int solve8q() {
-  int qrow[9]  = {0,0,0,0,0,0,0,0,0}; // [0] ignored, using indexes 1..8 and values 1..8 used for readability.
+  int qrow[9]  = {0,0,0,0,0,0,0,0,0}; // [0] ignored, using indexes 1..8 and values 1..8 for readability.
   int qlast[9] = {0,0,0,0,0,0,0,0,0}; // last row attempted for each column
   int col = 1;
   int i,j,k,bad;
@@ -30,7 +30,7 @@ int solve8q() {
     
     bad = 0;
     for(i=1;i<=7 && !bad;i++) {
-      for(j=i+1;j<=8 &&!bad;j++) {
+      for(j=i+1;j<=8 && !bad;j++) {
         if (qrow[i]!=0 && qrow[i]==qrow[j]) bad=1;
         if (qrow[i]!=0 && qrow[j]!=0 && abs(i-j)==abs(qrow[i]-qrow[j])) bad=1;
       }
