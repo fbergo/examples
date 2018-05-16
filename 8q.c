@@ -24,7 +24,7 @@ int solve8q() {
       qrow[col]++;
     }
 
-    /* check whether each queen pair attacks one another */
+    /* check if queens attack each other */
     
     bad = 0;
     for(i=1;i<=7 && !bad;i++) {
